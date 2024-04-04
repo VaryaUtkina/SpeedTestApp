@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		48FEBAC52BBF2B2D00FEB64C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FEBAC42BBF2B2D00FEB64C /* AppDelegate.swift */; };
 		48FEBAC72BBF2B2D00FEB64C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FEBAC62BBF2B2D00FEB64C /* SceneDelegate.swift */; };
-		48FEBAC92BBF2B2D00FEB64C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FEBAC82BBF2B2D00FEB64C /* ViewController.swift */; };
+		48FEBAC92BBF2B2D00FEB64C /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FEBAC82BBF2B2D00FEB64C /* SpeedViewController.swift */; };
 		48FEBACC2BBF2B2D00FEB64C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FEBACA2BBF2B2D00FEB64C /* Main.storyboard */; };
 		48FEBACE2BBF2B2F00FEB64C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FEBACD2BBF2B2F00FEB64C /* Assets.xcassets */; };
 		48FEBAD12BBF2B2F00FEB64C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FEBACF2BBF2B2F00FEB64C /* LaunchScreen.storyboard */; };
+		48FEBADD2BBF2F7500FEB64C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FEBADC2BBF2F7500FEB64C /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48FEBAC12BBF2B2D00FEB64C /* SpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FEBAC42BBF2B2D00FEB64C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48FEBAC62BBF2B2D00FEB64C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		48FEBAC82BBF2B2D00FEB64C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48FEBAC82BBF2B2D00FEB64C /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		48FEBACB2BBF2B2D00FEB64C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48FEBACD2BBF2B2F00FEB64C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48FEBAD02BBF2B2F00FEB64C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48FEBAD22BBF2B2F00FEB64C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48FEBADC2BBF2F7500FEB64C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		48FEBAC32BBF2B2D00FEB64C /* SpeedTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				48FEBAC42BBF2B2D00FEB64C /* AppDelegate.swift */,
-				48FEBAC62BBF2B2D00FEB64C /* SceneDelegate.swift */,
-				48FEBAC82BBF2B2D00FEB64C /* ViewController.swift */,
-				48FEBACA2BBF2B2D00FEB64C /* Main.storyboard */,
+				48FEBADB2BBF2F4900FEB64C /* Views */,
+				48FEBAD92BBF2BC900FEB64C /* ViewControllers */,
+				48FEBADA2BBF2BD900FEB64C /* Storyboards */,
+				48FEBAD82BBF2BC200FEB64C /* App */,
 				48FEBACD2BBF2B2F00FEB64C /* Assets.xcassets */,
-				48FEBACF2BBF2B2F00FEB64C /* LaunchScreen.storyboard */,
-				48FEBAD22BBF2B2F00FEB64C /* Info.plist */,
 			);
 			path = SpeedTestApp;
+			sourceTree = "<group>";
+		};
+		48FEBAD82BBF2BC200FEB64C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				48FEBAC42BBF2B2D00FEB64C /* AppDelegate.swift */,
+				48FEBAC62BBF2B2D00FEB64C /* SceneDelegate.swift */,
+				48FEBAD22BBF2B2F00FEB64C /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		48FEBAD92BBF2BC900FEB64C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				48FEBAC82BBF2B2D00FEB64C /* SpeedViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		48FEBADA2BBF2BD900FEB64C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				48FEBACA2BBF2B2D00FEB64C /* Main.storyboard */,
+				48FEBACF2BBF2B2F00FEB64C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		48FEBADB2BBF2F4900FEB64C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48FEBADC2BBF2F7500FEB64C /* RoundButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48FEBAC92BBF2B2D00FEB64C /* ViewController.swift in Sources */,
+				48FEBAC92BBF2B2D00FEB64C /* SpeedViewController.swift in Sources */,
 				48FEBAC52BBF2B2D00FEB64C /* AppDelegate.swift in Sources */,
+				48FEBADD2BBF2F7500FEB64C /* RoundButton.swift in Sources */,
 				48FEBAC72BBF2B2D00FEB64C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,12 +329,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpeedTestApp/Info.plist;
+				INFOPLIST_FILE = SpeedTestApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +342,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = utkina.SpeedTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,12 +360,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpeedTestApp/Info.plist;
+				INFOPLIST_FILE = SpeedTestApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +373,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = utkina.SpeedTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

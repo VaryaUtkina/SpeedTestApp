@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pg6-d8-Xu3">
+    <device id="retina4_0" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SPEED TEST-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SpeedViewController" customModule="SpeedTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyW-d9-hEV" customClass="RoundButton" customModule="SpeedTestApp" customModuleProvider="target">
+                                <rect key="frame" x="103" y="227" width="114" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FyW-d9-hEV" secondAttribute="height" multiplier="1:1" id="zXd-4r-8Hv"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FyW-d9-hEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7zG-3Z-UNE"/>
+                            <constraint firstItem="FyW-d9-hEV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DNk-vX-LO5"/>
+                            <constraint firstItem="FyW-d9-hEV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="Eam-Kd-lOw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="SPEED TEST" id="QjT-Ov-M78">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="3J0-Py-Hct">
+                            <connections>
+                                <segue destination="xid-g0-hU4" kind="show" id="hNA-Mf-7uk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911" y="3"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Oz6-65-rSK">
+            <objects>
+                <viewController id="xid-g0-hU4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vjH-R3-gAv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wko-Hb-Qtf">
+                                <rect key="frame" x="16" y="267" width="288" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="T0Y-XR-yeO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wko-Hb-Qtf" firstAttribute="centerY" secondItem="vjH-R3-gAv" secondAttribute="centerY" id="4lx-8G-Zbg"/>
+                            <constraint firstItem="wko-Hb-Qtf" firstAttribute="leading" secondItem="T0Y-XR-yeO" secondAttribute="leading" constant="16" id="CfB-P9-HDj"/>
+                            <constraint firstItem="T0Y-XR-yeO" firstAttribute="trailing" secondItem="wko-Hb-Qtf" secondAttribute="trailing" constant="16" id="Wgj-cY-PVI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="Fdu-jF-N25"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iC3-eX-ZM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1676" y="2"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CEp-mh-dFQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pg6-d8-Xu3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Gik-UI-VI0">
+                        <rect key="frame" x="0.0" y="20" width="320" height="92.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="H3h-L4-tgx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ylE-4l-8xB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.75" y="3.1690140845070425"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
