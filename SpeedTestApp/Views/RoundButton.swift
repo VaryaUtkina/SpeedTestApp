@@ -34,5 +34,17 @@ final class RoundButton: UIButton {
         backgroundColor = .background
         setTitleColor(.white, for: .normal)
     }
+    
+    func displayButton(_ isTestingInProgress: Bool) {
+        if isTestingInProgress {
+            setTitle("Go", for: .normal)
+            isEnabled = true
+            backgroundColor = .background
+        } else {
+            setTitle("wait...", for: .normal)
+            isEnabled = false
+            backgroundColor = .customGrey
+        }
+    }
 }
 

@@ -17,20 +17,100 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyW-d9-hEV" customClass="RoundButton" customModule="SpeedTestApp" customModuleProvider="target">
-                                <rect key="frame" x="103" y="227" width="114" height="114"/>
+                                <rect key="frame" x="103" y="397.5" width="114" height="113.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FyW-d9-hEV" secondAttribute="height" multiplier="1:1" id="zXd-4r-8Hv"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BgV-v5-UTI"/>
+                                </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qRu-dz-kQR">
+                                <rect key="frame" x="16" y="150" width="288" height="88"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="jIi-a9-Icv">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.down.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aqE-QS-hG0">
+                                                <rect key="frame" x="0.0" y="0.5" width="30" height="23"/>
+                                                <color key="tintColor" red="0.58039215690000001" green="0.35294117650000001" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="icy-pO-XrI"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxp-wA-aYj">
+                                                <rect key="frame" x="32" y="0.0" width="256" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average speed: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqF-vI-fp1">
+                                        <rect key="frame" x="0.0" y="32" width="288" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current speed: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAW-a1-RPN">
+                                        <rect key="frame" x="0.0" y="64" width="288" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="M4D-HN-EgQ">
+                                <rect key="frame" x="16" y="258" width="288" height="79"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Av2-ge-ru0">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.down.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hyQ-UI-etH">
+                                                <rect key="frame" x="0.0" y="0.5" width="30" height="23"/>
+                                                <color key="tintColor" red="0.41568627450000001" green="1" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="DcQ-IK-1Sd"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asZ-cy-NaX">
+                                                <rect key="frame" x="32" y="0.0" width="256" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average speed: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1C-be-7n8">
+                                        <rect key="frame" x="0.0" y="31" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current speed: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqR-5n-l3a">
+                                        <rect key="frame" x="0.0" y="58.5" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FyW-d9-hEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7zG-3Z-UNE"/>
-                            <constraint firstItem="FyW-d9-hEV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DNk-vX-LO5"/>
+                            <constraint firstItem="M4D-HN-EgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="95m-od-Qcd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qRu-dz-kQR" secondAttribute="trailing" constant="16" id="CRt-sv-M05"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M4D-HN-EgQ" secondAttribute="trailing" constant="16" id="CzK-PJ-3pQ"/>
                             <constraint firstItem="FyW-d9-hEV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="Eam-Kd-lOw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FyW-d9-hEV" secondAttribute="bottom" multiplier="10:9" id="MEo-1p-Rg0"/>
+                            <constraint firstItem="M4D-HN-EgQ" firstAttribute="top" secondItem="qRu-dz-kQR" secondAttribute="bottom" constant="20" id="iDg-xh-siN"/>
+                            <constraint firstItem="qRu-dz-kQR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nd4-Al-4WJ"/>
+                            <constraint firstItem="qRu-dz-kQR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" multiplier="4:3" id="pcS-5A-jqI"/>
+                            <constraint firstItem="qRu-dz-kQR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qw3-CH-ZAg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SPEED TEST" id="QjT-Ov-M78">
@@ -40,6 +120,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="currentDownloadSpeedLabel" destination="RAW-a1-RPN" id="hF6-oG-9p7"/>
+                        <outlet property="currentUploadLabel" destination="RqR-5n-l3a" id="vOS-iF-NAl"/>
+                        <outlet property="downloadLabel" destination="nqF-vI-fp1" id="oIK-R7-zpv"/>
+                        <outlet property="uploadLabel" destination="U1C-be-7n8" id="c96-7I-Y65"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,7 +134,7 @@
         <!--Settings-->
         <scene sceneID="Oz6-65-rSK">
             <objects>
-                <viewController id="xid-g0-hU4" sceneMemberID="viewController">
+                <viewController id="xid-g0-hU4" customClass="SettingsViewController" customModule="SpeedTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vjH-R3-gAv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,6 +179,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.down.circle" catalog="system" width="128" height="123"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
