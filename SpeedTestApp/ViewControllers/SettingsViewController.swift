@@ -9,6 +9,8 @@ import UIKit
 
 final class SettingsViewController: UIViewController {
 
+    weak var delegate: SettingsViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

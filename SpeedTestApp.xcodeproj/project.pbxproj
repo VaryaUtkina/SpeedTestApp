@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		488247482BC4570B003AD5F3 /* Extension + SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488247472BC4570B003AD5F3 /* Extension + SpeedViewController.swift */; };
 		48BAC4FA2BC2E42D00B50D4D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BAC4F92BC2E42D00B50D4D /* SettingsViewController.swift */; };
 		48BAC4FD2BC311E000B50D4D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48BAC4FC2BC311E000B50D4D /* Alamofire */; };
 		48BAC4FF2BC311E000B50D4D /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 48BAC4FE2BC311E000B50D4D /* AlamofireDynamic */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		488247472BC4570B003AD5F3 /* Extension + SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + SpeedViewController.swift"; sourceTree = "<group>"; };
 		48BAC4F92BC2E42D00B50D4D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		48BAC5012BC3164200B50D4D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		48FEBAC12BBF2B2D00FEB64C /* SpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		488247462BC456D1003AD5F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				488247472BC4570B003AD5F3 /* Extension + SpeedViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		48BAC5002BC315CF00B50D4D /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 			children = (
 				48FEBADB2BBF2F4900FEB64C /* Views */,
 				48FEBAD92BBF2BC900FEB64C /* ViewControllers */,
+				488247462BC456D1003AD5F3 /* Extensions */,
 				48BAC5002BC315CF00B50D4D /* Services */,
 				48FEBADA2BBF2BD900FEB64C /* Storyboards */,
 				48FEBAD82BBF2BC200FEB64C /* App */,
@@ -202,6 +213,7 @@
 				48FEBAC92BBF2B2D00FEB64C /* SpeedViewController.swift in Sources */,
 				48FEBAC52BBF2B2D00FEB64C /* AppDelegate.swift in Sources */,
 				48FEBADD2BBF2F7500FEB64C /* RoundButton.swift in Sources */,
+				488247482BC4570B003AD5F3 /* Extension + SpeedViewController.swift in Sources */,
 				48BAC4FA2BC2E42D00B50D4D /* SettingsViewController.swift in Sources */,
 				48FEBAC72BBF2B2D00FEB64C /* SceneDelegate.swift in Sources */,
 			);
