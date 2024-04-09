@@ -7,38 +7,15 @@
 
 import UIKit
 
-enum Alert {
-    case checkboxIsEmpty
-    case urlIsEmpty
-    case invalidURL
-    
-    var title: String {
-        switch self {
-        case .checkboxIsEmpty:
-            "What do you want to measure?"
-        case .urlIsEmpty:
-            "URL is empty"
-        case .invalidURL:
-            "Wrong URL!"
-        }
-    }
-    
-    var message: String {
-        switch self {
-        case .checkboxIsEmpty:
-            "Please choose type of speed"
-        case .urlIsEmpty:
-            "Please enter URL"
-        case .invalidURL:
-            "Please change URL"
-        }
-    }
-}
-
 final class SettingsViewController: UIViewController {
 
+    @IBOutlet var themeTitle: UILabel!
+    @IBOutlet var downloadLabel: UILabel!
+    @IBOutlet var uploadLabel: UILabel!
+    
     @IBOutlet var downloadCheckbox: UIButton!
     @IBOutlet var uploadCheckbox: UIButton!
+    @IBOutlet var themeButton: UIButton!
     
     var downloadIsSelected: Bool!
     var uploadIsSelected: Bool!
@@ -50,6 +27,7 @@ final class SettingsViewController: UIViewController {
         
         setupCheckbox(downloadIsSelected, for: downloadCheckbox)
         setupCheckbox(uploadIsSelected, for: uploadCheckbox)
+        setupThemeButton()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Save",
@@ -57,6 +35,11 @@ final class SettingsViewController: UIViewController {
             target: self,
             action: #selector(backButtonTapped)
         )
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupUI()
     }
     
     @objc func backButtonTapped() {
@@ -85,6 +68,8 @@ final class SettingsViewController: UIViewController {
         delegate?.didChangeUploadSelection(uploadIsSelected)
     }
     
+    
+    // MARK: - Setup UI
     private func setupCheckbox(_ boolValue: Bool, for sender: UIButton) {
         if boolValue {
             sender.setImage(UIImage(systemName: "checkmark.rectangle.portrait"), for: .normal)
@@ -93,14 +78,44 @@ final class SettingsViewController: UIViewController {
         }
     }
     
-    private func showAlert(withStatus status: Alert) {
-        let alert = UIAlertController(
-            title: status.title,
-            message: status.message,
-            preferredStyle: .alert
-        )
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
+    private func setupThemeButton() {
+        let themeOption = { [ unowned self ] (action: UIAction) in
+            let theme = ThemeOption(rawValue: action.title)
+            Theme.currentTheme = theme?.type ?? SystemTheme()
+            self.setupUI()
+        }
+
+        let menuChildren: [UIAction] = [
+            UIAction(
+                title: ThemeOption.system.rawValue,
+                state: Theme.currentTheme.option == ThemeOption.system ? .on : .off,
+                handler: themeOption
+            ),
+            UIAction(
+                title: ThemeOption.light.rawValue,
+                state: Theme.currentTheme.option == ThemeOption.light ? .on : .off,
+                handler: themeOption
+            ),
+            UIAction(
+                title: ThemeOption.dark.rawValue,
+                state: Theme.currentTheme.option == ThemeOption.dark ? .on : .off,
+                handler: themeOption
+            ),
+        ]
+
+        themeButton.menu = UIMenu(children: menuChildren)
+        themeButton.showsMenuAsPrimaryAction = true
+        themeButton.changesSelectionAsPrimaryAction = true
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = Theme.currentTheme.backgroundColor
+        Theme.currentTheme.applyThemeToButton(themeButton)
+        [themeTitle, downloadLabel, uploadLabel].forEach { label in
+            Theme.currentTheme.applyThemeToLabel(label)
+        }
+        navigationController?.navigationBar.tintColor = Theme.currentTheme.textColor
+        let attributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
+        navigationController?.navigationBar.largeTitleTextAttributes = attributes
     }
 }

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		488247482BC4570B003AD5F3 /* Extension + SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488247472BC4570B003AD5F3 /* Extension + SpeedViewController.swift */; };
+		488A3ECA2BC5AD8D00BA14F9 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A3EC92BC5AD8D00BA14F9 /* Extension + UIViewController.swift */; };
+		488A3ECC2BC5B98E00BA14F9 /* ThemeColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488A3ECB2BC5B98E00BA14F9 /* ThemeColors.xcassets */; };
+		488A3ECF2BC5BA5C00BA14F9 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A3ECE2BC5BA5C00BA14F9 /* Theme.swift */; };
+		488A3ED12BC5BA6F00BA14F9 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A3ED02BC5BA6F00BA14F9 /* LightTheme.swift */; };
+		488A3ED32BC5BA7D00BA14F9 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A3ED22BC5BA7D00BA14F9 /* DarkTheme.swift */; };
+		488A3ED52BC5BA8900BA14F9 /* SystemTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A3ED42BC5BA8900BA14F9 /* SystemTheme.swift */; };
 		48BAC4FA2BC2E42D00B50D4D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BAC4F92BC2E42D00B50D4D /* SettingsViewController.swift */; };
 		48BAC4FD2BC311E000B50D4D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48BAC4FC2BC311E000B50D4D /* Alamofire */; };
 		48BAC4FF2BC311E000B50D4D /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 48BAC4FE2BC311E000B50D4D /* AlamofireDynamic */; };
@@ -23,6 +29,12 @@
 
 /* Begin PBXFileReference section */
 		488247472BC4570B003AD5F3 /* Extension + SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + SpeedViewController.swift"; sourceTree = "<group>"; };
+		488A3EC92BC5AD8D00BA14F9 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
+		488A3ECB2BC5B98E00BA14F9 /* ThemeColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThemeColors.xcassets; sourceTree = "<group>"; };
+		488A3ECE2BC5BA5C00BA14F9 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		488A3ED02BC5BA6F00BA14F9 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
+		488A3ED22BC5BA7D00BA14F9 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
+		488A3ED42BC5BA8900BA14F9 /* SystemTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTheme.swift; sourceTree = "<group>"; };
 		48BAC4F92BC2E42D00B50D4D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		48BAC5012BC3164200B50D4D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		48FEBAC12BBF2B2D00FEB64C /* SpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,8 +65,21 @@
 			isa = PBXGroup;
 			children = (
 				488247472BC4570B003AD5F3 /* Extension + SpeedViewController.swift */,
+				488A3EC92BC5AD8D00BA14F9 /* Extension + UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		488A3ECD2BC5BA4900BA14F9 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				488A3ECB2BC5B98E00BA14F9 /* ThemeColors.xcassets */,
+				488A3ECE2BC5BA5C00BA14F9 /* Theme.swift */,
+				488A3ED02BC5BA6F00BA14F9 /* LightTheme.swift */,
+				488A3ED22BC5BA7D00BA14F9 /* DarkTheme.swift */,
+				488A3ED42BC5BA8900BA14F9 /* SystemTheme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		48BAC5002BC315CF00B50D4D /* Services */ = {
@@ -91,6 +116,7 @@
 				48FEBADA2BBF2BD900FEB64C /* Storyboards */,
 				48FEBAD82BBF2BC200FEB64C /* App */,
 				48FEBACD2BBF2B2F00FEB64C /* Assets.xcassets */,
+				488A3ECD2BC5BA4900BA14F9 /* Theme */,
 			);
 			path = SpeedTestApp;
 			sourceTree = "<group>";
@@ -197,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48FEBAD12BBF2B2F00FEB64C /* LaunchScreen.storyboard in Resources */,
+				488A3ECC2BC5B98E00BA14F9 /* ThemeColors.xcassets in Resources */,
 				48FEBACE2BBF2B2F00FEB64C /* Assets.xcassets in Resources */,
 				48FEBACC2BBF2B2D00FEB64C /* Main.storyboard in Resources */,
 			);
@@ -209,12 +236,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488A3ED52BC5BA8900BA14F9 /* SystemTheme.swift in Sources */,
+				488A3ECF2BC5BA5C00BA14F9 /* Theme.swift in Sources */,
 				48BAC5022BC3164200B50D4D /* NetworkManager.swift in Sources */,
 				48FEBAC92BBF2B2D00FEB64C /* SpeedViewController.swift in Sources */,
+				488A3ECA2BC5AD8D00BA14F9 /* Extension + UIViewController.swift in Sources */,
+				488A3ED12BC5BA6F00BA14F9 /* LightTheme.swift in Sources */,
 				48FEBAC52BBF2B2D00FEB64C /* AppDelegate.swift in Sources */,
 				48FEBADD2BBF2F7500FEB64C /* RoundButton.swift in Sources */,
 				488247482BC4570B003AD5F3 /* Extension + SpeedViewController.swift in Sources */,
 				48BAC4FA2BC2E42D00B50D4D /* SettingsViewController.swift in Sources */,
+				488A3ED32BC5BA7D00BA14F9 /* DarkTheme.swift in Sources */,
 				48FEBAC72BBF2B2D00FEB64C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

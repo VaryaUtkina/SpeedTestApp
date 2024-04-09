@@ -128,8 +128,11 @@
                         <outlet property="currentUploadLabel" destination="RqR-5n-l3a" id="vOS-iF-NAl"/>
                         <outlet property="downloadLabel" destination="nqF-vI-fp1" id="oIK-R7-zpv"/>
                         <outlet property="downloadStack" destination="qRu-dz-kQR" id="3ma-Qf-Bq1"/>
+                        <outlet property="downloadTitle" destination="Hxp-wA-aYj" id="vcu-fa-FLP"/>
+                        <outlet property="goButton" destination="FyW-d9-hEV" id="9yE-nz-o5o"/>
                         <outlet property="uploadLabel" destination="U1C-be-7n8" id="c96-7I-Y65"/>
                         <outlet property="uploadStack" destination="M4D-HN-EgQ" id="Zo5-ib-1UN"/>
+                        <outlet property="uploadTitle" destination="asZ-cy-NaX" id="u9x-6X-GgF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -228,7 +231,11 @@
                     <navigationItem key="navigationItem" title="Settings" id="Fdu-jF-N25"/>
                     <connections>
                         <outlet property="downloadCheckbox" destination="5YS-Xq-aXf" id="34E-KI-eIl"/>
+                        <outlet property="downloadLabel" destination="K5C-FP-VC2" id="3Lj-rB-pul"/>
+                        <outlet property="themeButton" destination="4i1-2Y-dOZ" id="Zlv-LI-gkg"/>
+                        <outlet property="themeTitle" destination="ron-My-SUy" id="9Jc-cB-w3y"/>
                         <outlet property="uploadCheckbox" destination="x1V-gi-z7M" id="QCi-VV-uTf"/>
+                        <outlet property="uploadLabel" destination="ef8-5c-awZ" id="WhN-aW-eoi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iC3-eX-ZM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

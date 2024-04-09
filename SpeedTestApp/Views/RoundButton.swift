@@ -23,7 +23,6 @@ final class RoundButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         layer.cornerRadius = bounds.height / 2
     }
     
@@ -31,7 +30,7 @@ final class RoundButton: UIButton {
     private func setupButton() {
         layer.cornerRadius = bounds.height / 2
         layer.masksToBounds = true
-        backgroundColor = .background
+        backgroundColor = Theme.currentTheme.buttonColor
         setTitleColor(.white, for: .normal)
     }
     
@@ -39,7 +38,7 @@ final class RoundButton: UIButton {
         if isTestingInProgress {
             setTitle("Go", for: .normal)
             isEnabled = true
-            backgroundColor = .background
+            backgroundColor = Theme.currentTheme.buttonColor
         } else {
             setTitle("wait...", for: .normal)
             isEnabled = false

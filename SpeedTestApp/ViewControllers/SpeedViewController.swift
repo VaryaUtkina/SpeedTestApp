@@ -14,6 +14,10 @@ protocol SettingsViewControllerDelegate: AnyObject {
 
 final class SpeedViewController: UIViewController {
     
+    @IBOutlet var goButton: RoundButton!
+    
+    @IBOutlet var downloadTitle: UILabel!
+    @IBOutlet var uploadTitle: UILabel!
     @IBOutlet var downloadLabel: UILabel!
     @IBOutlet var currentDownloadSpeedLabel: UILabel!
     @IBOutlet var uploadLabel: UILabel!
@@ -28,10 +32,24 @@ final class SpeedViewController: UIViewController {
     var shouldMeasureUploadSpeed = true
     
     private var isTestingInProgress = false
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.backgroundColor = Theme.currentTheme.backgroundColor
+        [
+            downloadTitle,
+            uploadTitle,
+            downloadLabel,
+            uploadLabel,
+            currentDownloadSpeedLabel,
+            currentUploadLabel
+        ].forEach{ label in
+            Theme.currentTheme.applyThemeToLabel(label ?? UILabel())
+        }
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        let attributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
+        navigationBar.titleTextAttributes = attributes
+        goButton.displayButton(!isTestingInProgress)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,20 +88,9 @@ final class SpeedViewController: UIViewController {
             }
         }
     }
-    
-    // ПОВТОРЕНИЕ!!! В двух VC одно и то же
-    private func showAlert(withStatus status: Alert) {
-        let alert = UIAlertController(
-            title: status.title,
-            message: status.message,
-            preferredStyle: .alert
-        )
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
 }
 
+// MARK: - SettingsViewControllerDelegate
 extension SpeedViewController: SettingsViewControllerDelegate {
     func didChangeDownloadSelection(_ value: Bool) {
         shouldMeasureDownloadSpeed = value
