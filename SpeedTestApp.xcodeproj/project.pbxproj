@@ -14,6 +14,9 @@
 		488A3ED12BC5BA6F00BA14F9 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A3ED02BC5BA6F00BA14F9 /* LightTheme.swift */; };
 		488A3ED32BC5BA7D00BA14F9 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A3ED22BC5BA7D00BA14F9 /* DarkTheme.swift */; };
 		488A3ED52BC5BA8900BA14F9 /* SystemTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A3ED42BC5BA8900BA14F9 /* SystemTheme.swift */; };
+		48AA191C2BC71BC2003AD67A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AA191B2BC71BC2003AD67A /* CoreData.framework */; };
+		48AA191F2BC71C98003AD67A /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AA191D2BC71C98003AD67A /* Data.xcdatamodeld */; };
+		48AA19222BC71CF4003AD67A /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA19212BC71CF4003AD67A /* StorageManager.swift */; };
 		48BAC4FA2BC2E42D00B50D4D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BAC4F92BC2E42D00B50D4D /* SettingsViewController.swift */; };
 		48BAC4FD2BC311E000B50D4D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48BAC4FC2BC311E000B50D4D /* Alamofire */; };
 		48BAC4FF2BC311E000B50D4D /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 48BAC4FE2BC311E000B50D4D /* AlamofireDynamic */; };
@@ -35,6 +38,9 @@
 		488A3ED02BC5BA6F00BA14F9 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
 		488A3ED22BC5BA7D00BA14F9 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		488A3ED42BC5BA8900BA14F9 /* SystemTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTheme.swift; sourceTree = "<group>"; };
+		48AA191B2BC71BC2003AD67A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		48AA191E2BC71C98003AD67A /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		48AA19212BC71CF4003AD67A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		48BAC4F92BC2E42D00B50D4D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		48BAC5012BC3164200B50D4D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		48FEBAC12BBF2B2D00FEB64C /* SpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48BAC4FD2BC311E000B50D4D /* Alamofire in Frameworks */,
+				48AA191C2BC71BC2003AD67A /* CoreData.framework in Frameworks */,
 				48BAC4FF2BC311E000B50D4D /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,10 +89,27 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		48AA191A2BC71BC1003AD67A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48AA191B2BC71BC2003AD67A /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48AA19202BC71C9F003AD67A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48AA191D2BC71C98003AD67A /* Data.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		48BAC5002BC315CF00B50D4D /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				48BAC5012BC3164200B50D4D /* NetworkManager.swift */,
+				48AA19212BC71CF4003AD67A /* StorageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -95,6 +119,7 @@
 			children = (
 				48FEBAC32BBF2B2D00FEB64C /* SpeedTestApp */,
 				48FEBAC22BBF2B2D00FEB64C /* Products */,
+				48AA191A2BC71BC1003AD67A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +134,7 @@
 		48FEBAC32BBF2B2D00FEB64C /* SpeedTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				48AA19202BC71C9F003AD67A /* Models */,
 				48FEBADB2BBF2F4900FEB64C /* Views */,
 				48FEBAD92BBF2BC900FEB64C /* ViewControllers */,
 				488247462BC456D1003AD5F3 /* Extensions */,
@@ -239,6 +265,7 @@
 				488A3ED52BC5BA8900BA14F9 /* SystemTheme.swift in Sources */,
 				488A3ECF2BC5BA5C00BA14F9 /* Theme.swift in Sources */,
 				48BAC5022BC3164200B50D4D /* NetworkManager.swift in Sources */,
+				48AA19222BC71CF4003AD67A /* StorageManager.swift in Sources */,
 				48FEBAC92BBF2B2D00FEB64C /* SpeedViewController.swift in Sources */,
 				488A3ECA2BC5AD8D00BA14F9 /* Extension + UIViewController.swift in Sources */,
 				488A3ED12BC5BA6F00BA14F9 /* LightTheme.swift in Sources */,
@@ -246,6 +273,7 @@
 				48FEBADD2BBF2F7500FEB64C /* RoundButton.swift in Sources */,
 				488247482BC4570B003AD5F3 /* Extension + SpeedViewController.swift in Sources */,
 				48BAC4FA2BC2E42D00B50D4D /* SettingsViewController.swift in Sources */,
+				48AA191F2BC71C98003AD67A /* Data.xcdatamodeld in Sources */,
 				488A3ED32BC5BA7D00BA14F9 /* DarkTheme.swift in Sources */,
 				48FEBAC72BBF2B2D00FEB64C /* SceneDelegate.swift in Sources */,
 			);
@@ -500,6 +528,19 @@
 			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		48AA191D2BC71C98003AD67A /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48AA191E2BC71C98003AD67A /* Data.xcdatamodel */,
+			);
+			currentVersion = 48AA191E2BC71C98003AD67A /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 48FEBAB92BBF2B2D00FEB64C /* Project object */;
 }

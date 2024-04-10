@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SpeedViewControllerDelegate: AnyObject {
+    func reloadView()
+}
+
 final class SettingsViewController: UIViewController {
 
     @IBOutlet var themeTitle: UILabel!
@@ -25,6 +29,9 @@ final class SettingsViewController: UIViewController {
     
     weak var delegate: SettingsViewControllerDelegate?
 
+    private var storageManager = StorageManager.shared
+    private var coreData: [Speed] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +46,7 @@ final class SettingsViewController: UIViewController {
             target: self,
             action: #selector(backButtonTapped)
         )
+        fetchData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +68,7 @@ final class SettingsViewController: UIViewController {
                 delegate?.didChangeURL(urlTextField.text ?? "")
             navigationController?.popViewController(animated: true)
         }
+        save()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -129,6 +138,23 @@ final class SettingsViewController: UIViewController {
         navigationController?.navigationBar.tintColor = Theme.currentTheme.textColor
         let attributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
         navigationController?.navigationBar.largeTitleTextAttributes = attributes
+    }
+    
+    private func save() {
+        storageManager.create(downloadIsSelected, uploadIsSelected, url, Theme.currentTheme.option.rawValue) { speed in
+            coreData.insert(speed, at: 0)
+        }
+    }
+    
+    private func fetchData() {
+        storageManager.fetchData { [unowned self] result in
+            switch result {
+            case .success(let data):
+                self.coreData = data
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 

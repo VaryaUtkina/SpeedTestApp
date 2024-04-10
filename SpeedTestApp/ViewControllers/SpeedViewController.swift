@@ -47,9 +47,10 @@ final class SpeedViewController: UIViewController {
         ].forEach{ label in
             Theme.currentTheme.applyThemeToLabel(label ?? UILabel())
         }
-        guard let navigationBar = navigationController?.navigationBar else { return }
-        let attributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
-        navigationBar.titleTextAttributes = attributes
+        if let navigationBar = navigationController?.navigationBar {
+            let attributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
+            navigationBar.titleTextAttributes = attributes
+        }
         goButton.displayButton(!isTestingInProgress)
     }
     
