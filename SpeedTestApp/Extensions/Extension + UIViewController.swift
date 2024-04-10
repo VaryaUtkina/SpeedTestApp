@@ -7,10 +7,11 @@
 
 import UIKit
 
-enum Alert {
+enum Alert: Error {
     case checkboxIsEmpty
     case urlIsEmpty
     case invalidURL
+    case uploadError
     
     var title: String {
         switch self {
@@ -20,6 +21,8 @@ enum Alert {
             "URL is empty"
         case .invalidURL:
             "Wrong URL!"
+        case .uploadError:
+            "Something wrong"
         }
     }
     
@@ -30,7 +33,9 @@ enum Alert {
         case .urlIsEmpty:
             "Please enter URL"
         case .invalidURL:
-            "Please change URL"
+            "Please change URL and try again"
+        case .uploadError:
+            "Error occurred while uploading data. Please try again later"
         }
     }
 }

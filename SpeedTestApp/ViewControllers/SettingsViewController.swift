@@ -17,8 +17,11 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var uploadCheckbox: UIButton!
     @IBOutlet var themeButton: UIButton!
     
+    @IBOutlet var urlTextField: UITextField!
+    
     var downloadIsSelected: Bool!
     var uploadIsSelected: Bool!
+    var url: String!
     
     weak var delegate: SettingsViewControllerDelegate?
 
@@ -28,6 +31,7 @@ final class SettingsViewController: UIViewController {
         setupCheckbox(downloadIsSelected, for: downloadCheckbox)
         setupCheckbox(uploadIsSelected, for: uploadCheckbox)
         setupThemeButton()
+        urlTextField.text = url
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Save",
@@ -42,10 +46,18 @@ final class SettingsViewController: UIViewController {
         setupUI()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     @objc func backButtonTapped() {
         if !downloadIsSelected && !uploadIsSelected {
             showAlert(withStatus: .checkboxIsEmpty)
+        } else if urlTextField.text == "" {
+                showAlert(withStatus: .urlIsEmpty)
         } else {
+                delegate?.didChangeURL(urlTextField.text ?? "")
             navigationController?.popViewController(animated: true)
         }
     }
@@ -117,5 +129,12 @@ final class SettingsViewController: UIViewController {
         navigationController?.navigationBar.tintColor = Theme.currentTheme.textColor
         let attributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
         navigationController?.navigationBar.largeTitleTextAttributes = attributes
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension SettingsViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
 }

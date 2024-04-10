@@ -10,6 +10,7 @@ import UIKit
 protocol SettingsViewControllerDelegate: AnyObject {
     func didChangeDownloadSelection(_ value: Bool)
     func didChangeUploadSelection(_ value: Bool)
+    func didChangeURL(_ value: String)
 }
 
 final class SpeedViewController: UIViewController {
@@ -27,7 +28,7 @@ final class SpeedViewController: UIViewController {
     @IBOutlet var uploadStack: UIStackView!
     
     let networkManager = NetworkManager.shared
-    let serverURL = "https://www.speedtest.net"
+    var serverURL = ""
     var shouldMeasureDownloadSpeed = true
     var shouldMeasureUploadSpeed = true
     
@@ -57,6 +58,7 @@ final class SpeedViewController: UIViewController {
         settingsVC.delegate = self
         settingsVC.downloadIsSelected = shouldMeasureDownloadSpeed
         settingsVC.uploadIsSelected = shouldMeasureUploadSpeed
+        settingsVC.url = serverURL
     }
     
     @IBAction func goButtonTapped(_ sender: RoundButton) {
@@ -70,20 +72,40 @@ final class SpeedViewController: UIViewController {
         isTestingInProgress.toggle()
         
         if shouldMeasureDownloadSpeed && !shouldMeasureUploadSpeed {
-            measureDownloadSpeed {
-                sender.displayButton(self.isTestingInProgress)
-                self.isTestingInProgress.toggle()
-            }
-        } else if shouldMeasureUploadSpeed && !shouldMeasureDownloadSpeed {
-            measureUploadSpeed {
-                sender.displayButton(self.isTestingInProgress)
-                self.isTestingInProgress.toggle()
-            }
-        } else {
-            measureDownloadSpeed {
-                self.measureUploadSpeed {
+            measureDownloadSpeed { result in
+                if result {
                     sender.displayButton(self.isTestingInProgress)
                     self.isTestingInProgress.toggle()
+                } else {
+                    sender.displayButton(true)
+                    self.isTestingInProgress = false
+                }
+            }
+        } else if shouldMeasureUploadSpeed && !shouldMeasureDownloadSpeed {
+            measureUploadSpeed { result in
+                if result {
+                    sender.displayButton(self.isTestingInProgress)
+                    self.isTestingInProgress.toggle()
+                } else {
+                    sender.displayButton(true)
+                    self.isTestingInProgress = false
+                }
+            }
+        } else {
+            measureDownloadSpeed { downloadResult in
+                if downloadResult {
+                    self.measureUploadSpeed { uploadResult in
+                        if uploadResult {
+                            sender.displayButton(self.isTestingInProgress)
+                            self.isTestingInProgress.toggle()
+                        } else {
+                            sender.displayButton(true)
+                            self.isTestingInProgress = false
+                        }
+                    }
+                } else {
+                    sender.displayButton(true)
+                    self.isTestingInProgress = false
                 }
             }
         }
@@ -100,5 +122,9 @@ extension SpeedViewController: SettingsViewControllerDelegate {
     func didChangeUploadSelection(_ value: Bool) {
         shouldMeasureUploadSpeed = value
         uploadStack.isHidden = !value
+    }
+    
+    func didChangeURL(_ value: String) {
+        serverURL = value
     }
 }

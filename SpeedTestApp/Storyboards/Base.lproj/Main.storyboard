@@ -236,6 +236,7 @@
                         <outlet property="themeTitle" destination="ron-My-SUy" id="9Jc-cB-w3y"/>
                         <outlet property="uploadCheckbox" destination="x1V-gi-z7M" id="QCi-VV-uTf"/>
                         <outlet property="uploadLabel" destination="ef8-5c-awZ" id="WhN-aW-eoi"/>
+                        <outlet property="urlTextField" destination="wko-Hb-Qtf" id="ue0-8O-bXU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iC3-eX-ZM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -248,7 +249,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pg6-d8-Xu3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Gik-UI-VI0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
