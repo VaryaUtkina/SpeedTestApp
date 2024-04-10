@@ -7,6 +7,7 @@
 
 import UIKit
 
+// класс для создания круглой кнопки
 final class RoundButton: UIButton {
     
     override init(frame: CGRect) {

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// системная тема и ее параметры
 final class SystemTheme: ThemeProtocol {
     var option = ThemeOption.system
     var backgroundColor = UIColor.backgroundSystem

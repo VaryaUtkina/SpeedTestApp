@@ -19,7 +19,7 @@ final class NetworkManager {
         completion: @escaping (Result<Double, Alert>) -> Void
     ) {
         // проверка url
-        guard let url = URL(string: serverURL) else {
+        guard let _ = URL(string: serverURL) else {
             // при обнаружении ошибки передаем ее в completion
             completion(.failure(.invalidURL))
             return
@@ -43,7 +43,7 @@ final class NetworkManager {
         completion: @escaping (Result<Double, Alert>) -> Void
     ) {
         // проверка url
-        guard let url = URL(string: serverURL) else {
+        guard let _ = URL(string: serverURL) else {
             // при обнаружении ошибки передаем ее в completion
             completion(.failure(.invalidURL))
             return

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// реализация измерения скорости
 extension SpeedViewController {
     func measureDownloadSpeed(completion: @escaping (Bool) -> Void) {
         var allDownloadSpeeds: [Double] = []

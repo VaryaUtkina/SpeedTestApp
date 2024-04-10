@@ -40,6 +40,7 @@ enum Alert: Error {
     }
 }
 
+// настройка алерт контроллеров
 extension UIViewController {
     func showAlert(withStatus status: Alert) {
         let alert = UIAlertController(

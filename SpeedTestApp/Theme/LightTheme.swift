@@ -7,6 +7,7 @@
 
 import UIKit
 
+// светлая тема и ее параметры
 final class LightTheme: ThemeProtocol {
     var option = ThemeOption.light
     var backgroundColor = UIColor.backgroundLight

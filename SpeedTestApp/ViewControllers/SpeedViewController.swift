@@ -7,6 +7,7 @@
 
 import UIKit
 
+// протокол для передачи свойств на другой экран через делегат
 protocol SettingsViewControllerDelegate: AnyObject {
     func didChangeDownloadSelection(_ value: Bool)
     func didChangeUploadSelection(_ value: Bool)
@@ -36,6 +37,7 @@ final class SpeedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // настройка отображения экраны с учетом выбранной темы
         view.backgroundColor = Theme.currentTheme.backgroundColor
         [
             downloadTitle,
@@ -53,6 +55,7 @@ final class SpeedViewController: UIViewController {
         goButton.displayButton(!isTestingInProgress)
     }
     
+    // передача данных при переходе на другой экран
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
         settingsVC.delegate = self
@@ -61,16 +64,20 @@ final class SpeedViewController: UIViewController {
         settingsVC.url = serverURL
     }
     
+    // логика при нажатии на кнопку Go
     @IBAction func goButtonTapped(_ sender: RoundButton) {
+        // не дает возможности нажать на кнопку, если процесс был запущен
         if isTestingInProgress {
             return
         }
         
+        // обновление вида кнопки
         downloadLabel.text = "Average speed: -"
         uploadLabel.text = "Average speed: -"
         sender.displayButton(isTestingInProgress)
         isTestingInProgress.toggle()
         
+        // проверка чекбоксов (какие параметры выбраны) и реализация кода
         if shouldMeasureDownloadSpeed && !shouldMeasureUploadSpeed {
             measureDownloadSpeed { result in
                 if result {

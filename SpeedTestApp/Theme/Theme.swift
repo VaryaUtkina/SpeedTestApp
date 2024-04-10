@@ -7,6 +7,7 @@
 
 import UIKit
 
+// перечисление возможных тем
 enum ThemeOption: String, CaseIterable {
     case system = "System theme"
     case light = "Light theme"
@@ -24,6 +25,7 @@ enum ThemeOption: String, CaseIterable {
     }
 }
 
+// протокол для назначения основных параметров тем
 protocol ThemeProtocol {
     var option: ThemeOption { get }
     var backgroundColor: UIColor { get }
@@ -34,6 +36,7 @@ protocol ThemeProtocol {
     func applyThemeToLabel(_ label: UILabel)
 }
 
+// класс, который содержит текущую тему
 final class Theme {
     static var currentTheme: ThemeProtocol = SystemTheme()
 }

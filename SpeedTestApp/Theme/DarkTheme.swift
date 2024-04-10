@@ -7,6 +7,7 @@
 
 import UIKit
 
+// темная тема и ее параметры
 final class DarkTheme: ThemeProtocol {
     var option = ThemeOption.dark
     var backgroundColor = UIColor.backgroundDark

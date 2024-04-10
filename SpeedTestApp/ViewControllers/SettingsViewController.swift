@@ -23,16 +23,19 @@ final class SettingsViewController: UIViewController {
     var uploadIsSelected: Bool!
     var url: String!
     
+    // делегат
     weak var delegate: SettingsViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // загрузка на экран элементов вью
         setupCheckbox(downloadIsSelected, for: downloadCheckbox)
         setupCheckbox(uploadIsSelected, for: uploadCheckbox)
         setupThemeButton()
         urlTextField.text = url
         
+        // кнопка Save
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Save",
             style: .plain,
@@ -43,14 +46,17 @@ final class SettingsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // обновление интерфейса
         setupUI()
     }
     
+    // метод, который позволяет закончить редактирование текстового поля при нажатии на экран
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
+    // логика кнопки Save (проверяет заполненность чекбоксов и текстового поля)
     @objc func backButtonTapped() {
         if !downloadIsSelected && !uploadIsSelected {
             showAlert(withStatus: .checkboxIsEmpty)
@@ -62,18 +68,21 @@ final class SettingsViewController: UIViewController {
         }
     }
     
+    // передача данных на другой экран
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let speedVC = segue.destination as? SpeedViewController else { return }
         speedVC.shouldMeasureDownloadSpeed = downloadIsSelected
         speedVC.shouldMeasureUploadSpeed = uploadIsSelected
     }
     
+    // чекбокс
     @IBAction func downloadCheckboxTapped() {
         downloadIsSelected.toggle()
         setupCheckbox(downloadIsSelected, for: downloadCheckbox)
         delegate?.didChangeDownloadSelection(downloadIsSelected)
     }
     
+    // чекбокс
     @IBAction func uploadCheckboxTapped() {
         uploadIsSelected.toggle()
         setupCheckbox(uploadIsSelected, for: uploadCheckbox)
@@ -90,6 +99,7 @@ final class SettingsViewController: UIViewController {
         }
     }
     
+    // кнопка с выбором темы
     private func setupThemeButton() {
         let themeOption = { [ unowned self ] (action: UIAction) in
             let theme = ThemeOption(rawValue: action.title)
@@ -120,6 +130,7 @@ final class SettingsViewController: UIViewController {
         themeButton.changesSelectionAsPrimaryAction = true
     }
     
+    // функция для обновления интерфейса в зависимости от выбранной темы
     private func setupUI() {
         view.backgroundColor = Theme.currentTheme.backgroundColor
         Theme.currentTheme.applyThemeToButton(themeButton)
