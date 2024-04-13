@@ -1,8 +1,7 @@
 # Speed Test
-[1. About App](#chapter1)
-<p>
-</p>
-[2. How to use](#chapter2)
+1. [About App](#chapter1)
+2. [How to use](#chapter2)
+
 ## <a name="chapter1">1. About App</a>
 <p>
 App using the Alamofire framework to measure Internet speed.
