@@ -7,7 +7,8 @@
 App using the Alamofire framework to measure Internet speed.
 </p>
 <p align="center">
-    <img src="https://github.com/VaryaUtkina/IllustrationApp/blob/6b59f5483c17f3c4223995b4fbd52ab9249e8e41/Gif%20illustration%20App.gif" width=30% height=30%>
+    <img src="https://github.com/VaryaUtkina/SpeedTestApp/blob/13d1ba86851fc027f0be97dd3a7c032e90d59f9d/SpeedTest.gif" width=30% height=30%>
 </p>
 
 <a name="chapter2">How to use</a>
+- The "Go" button is located on the main screen. When you pressed "Go" button, the speed measurement will be started. __Attention!__ The measurement will not start until the fields on the second screen are filled in.
