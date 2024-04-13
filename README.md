@@ -1,10 +1,8 @@
 # Speed Test
-<p>
 [1. About App](#chapter1)
-</p>
 <p>
-[2. How to use](#chapter2)
 </p>
+[2. How to use](#chapter2)
 ## <a name="chapter1">1. About App</a>
 <p>
 App using the Alamofire framework to measure Internet speed.
@@ -28,8 +26,8 @@ App using the Alamofire framework to measure Internet speed.
 </p>
 - Be careful! In order for the application to work, on the second screen you need to:
 <p>
-    - Enter the URL where the speed measurement is performed. For example, https://www.speedtest.net
+    1. Enter the URL where the speed measurement is performed. For example, https://www.speedtest.net
 </p>
 <p>
-    - Do not leave blank checkboxes, choose which speed you want to measure. You can measure upload speed, download speed or both
+    2. Do not leave blank checkboxes, choose which speed you want to measure. You can measure upload speed, download speed or both
 </p>
